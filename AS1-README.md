@@ -1,99 +1,66 @@
-# Java
+#JAVA
+public class Dogs {
 
- private int id;
     private String name;
-    private String jobTitle;
-    private String manager;
-    private int salary;
+    private String breed;
+    private String owner;
+    private int score;
 
-    public Employee () {
-    }
-
-    public Employee (int id, String name) {
-        this.id = id;
+    public Dogs(String name, String breed, String owner, int score) {
         this.name = name;
+        this.breed = breed;
+        this.owner = owner;
+        this.score = score;
     }
 
-    public Employee (int id, String name, String jobTitle, String manager, int salary) {
-        this.id = id;
-        this.name = name;
-        this.jobTitle = jobTitle;
-        this.manager = manager;
-        this.salary = salary;
-    }
-
-    public int getId () {
-        return id;
-    }
-
-    public void setId (int id) {
-        this.id = id;
-    }
-
-    public String getName () {
+    public String getName() {
         return name;
     }
 
-    public void setName (String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getJobTitle () {
-        return jobTitle;
+    public String getBreed() {
+        return breed;
     }
 
-    public void setJobTitle (String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 
-    public String getManager () {
-        return manager;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setManager (String manager) {
-        this.manager = manager;
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+    public int getScore() {
+        return score;
     }
 
-    public int getSalary () {
-        return salary;
+    public void setScore(int score) {
+        this.score = score;
     }
-
-    public void setSalary (int salary) {
-        this.salary = salary;
+    public void increaseScore () {
+        this.score ++;
     }
-
-    public void giveSalaryRaise (int percentRaise) {
-        this.salary += (this.getSalary () * (percentRaise / 100.0));
-    }
-
-    public String parkingPermitStatus () {
-        if ((this.jobTitle.startsWith ("Senior")) && (this.getSalary () > 22000)) {
-            return "Employee is permitted a car parking space.";
-        }
-        else {
-            return "Employee is not permitted a car parking space.";
-        }
-    }
-
     @Override
-    public String toString () {
-        final StringBuilder sb = new StringBuilder ("Employee{");
-
-        sb.append ("id=").append (id);
-        sb.append (", name='").append (name).append ('\'');
-        sb.append (", jobTitle='").append (jobTitle).append ('\'');
-        sb.append (", manager='").append (manager).append ('\'');
-        sb.append (", salary=").append (salary);
-        sb.append ('}');
-
-        return sb.toString ();
+    public String toString() {
+        return "Dogs{" +
+                "name='" + name + '\'' +
+                ", breed='" + breed + '\'' +
+                ", owner='" + owner + '\'' +
+                ", score=" + score +
+                '}';
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
+        Dogs Theresa = new Dogs("Theresa", "pug","Batul", 7 );
+        System.out.println (Theresa);
+        Theresa.increaseScore();
+        System.out.println(Theresa);
+    }
 
     }
-}
-
-#setting a dog name and breed
-
-
